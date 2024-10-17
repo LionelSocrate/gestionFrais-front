@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import AddStudentForm from "./AddStudentForm";
-import DeleteStudent from "./DeleteStudent";
-import UpdateStudent from "./UpdateStudentForm";
+import React, { useState } from 'react';
+import AddStudentForm from './AddStudentForm';
+import DeleteStudent from './DeleteStudent';
+import UpdateStudent from './UpdateStudentForm';
 
 export default function ListeStudent({
   id,
@@ -75,7 +75,7 @@ export default function ListeStudent({
             handleAfficheDelete();
           }}
         >
-          supprimer
+          Supprimer
         </p>
         <p
           className=" bg-green-400 text-white rounded-sm flex items-center justify-center  cursor-pointer"

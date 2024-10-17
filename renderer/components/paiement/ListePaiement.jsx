@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import DeletePaiement from "./DeletePaiement";
-import UpdatePaiement from "./UpdatePaiement";
+import React, { useState } from 'react';
+import DeletePaiement from './DeletePaiement';
+import UpdatePaiement from './UpdatePaiement';
 
 export default function ListePaiement({
   id,
@@ -29,10 +29,10 @@ export default function ListePaiement({
   };
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("fr-FR", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+    return date.toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     });
   };
   return (
@@ -72,7 +72,7 @@ export default function ListePaiement({
             handleAfficheDelete();
           }}
         >
-          supprimer
+          Supprimer
         </p>
         <p
           className=" bg-green-400 text-white rounded-sm flex items-center justify-center  cursor-pointer"

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { IoClose } from "react-icons/io5";
+import React, { useEffect, useState } from 'react';
+import { IoClose } from 'react-icons/io5';
 
 export default function AddStudentForm({ afficheAddStudent }) {
-  const [nom, setNom] = useState({ value: "", valid: false });
-  const [prenoms, setPrenoms] = useState({ value: "", valid: false });
-  const [niveau, setNiveau] = useState({ value: "L1", valid: true });
-  const [numMatr, setNumMatr] = useState({ value: "", valid: false });
-  const [email, setEmail] = useState({ value: "", valid: false });
+  const [nom, setNom] = useState({ value: '', valid: false });
+  const [prenoms, setPrenoms] = useState({ value: '', valid: false });
+  const [niveau, setNiveau] = useState({ value: 'L1', valid: true });
+  const [numMatr, setNumMatr] = useState({ value: '', valid: false });
+  const [email, setEmail] = useState({ value: '', valid: false });
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -36,7 +36,7 @@ export default function AddStudentForm({ afficheAddStudent }) {
     }
 
     //numMatr
-    if (numMatr.value?.trim() !== "") {
+    if (numMatr.value?.trim() !== '') {
       if (!numMatr.valid) {
         setNumMatr((prev) => ({ ...prev, valid: true }));
       }
@@ -56,7 +56,7 @@ export default function AddStudentForm({ afficheAddStudent }) {
         setEmail((prev) => ({ ...prev, valid: false }));
       }
     }
-  }, [nom.value, prenoms.value, niveau.value, numMatr.value, email.value]);
+  }, [nom.value, prenoms.value, numMatr.value, email.value]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,9 +66,9 @@ export default function AddStudentForm({ afficheAddStudent }) {
           if (email.valid) {
             try {
               const newStudent = async () => {
-                await fetch("http://localhost:5000/api/student/addStudent", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
+                await fetch('http://localhost:5000/api/student/addStudent', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({
                     nom: nom.value,
                     prenoms: prenoms.value,
@@ -85,16 +85,16 @@ export default function AddStudentForm({ afficheAddStudent }) {
               console.log(err);
             }
           } else {
-            console.log("Email invalide");
+            console.log('Email invalide');
           }
         } else {
-          console.log("numéro matricule invalide");
+          console.log('numéro matricule invalide');
         }
       } else {
-        console.log("prenoms invalides");
+        console.log('prenoms invalides');
       }
     } else {
-      console.log("nom invalid");
+      console.log('nom invalid');
     }
   };
 
@@ -110,7 +110,7 @@ export default function AddStudentForm({ afficheAddStudent }) {
             className=" cursor-pointer absolute top-2 right-2 flex items-center justify-center  w-7 h-7 rounded-full bg-green-400"
             onClick={afficheAddStudent}
           >
-            <IoClose size={"1.2rem"} className=" text-white" />
+            <IoClose size={'1.2rem'} className=" text-white" />
           </div>
           <p className=" text-xl uppercase text-green-400  font-extrabold">
             Ajout d'Etudiant
@@ -181,10 +181,10 @@ export default function AddStudentForm({ afficheAddStudent }) {
           </div>
           <button
             type="submit"
-            className=" uppercase text-white bg-green-300 rounded-sm w-full py-2"
+            className="uppercase text-white bg-green-300 rounded-sm w-full py-2 font-semibold"
             onClick={handleSubmit}
           >
-            ajouter
+            Ajouter
           </button>
         </form>
       </div>

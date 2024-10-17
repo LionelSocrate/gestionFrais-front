@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { IoMdArrowBack } from "react-icons/io";
-import ListeStudent from "../etudiant/ListeStudent";
+import React, { useEffect, useState } from 'react';
+import { IoMdArrowBack } from 'react-icons/io';
+import ListeStudent from '../Etudiant/ListeStudent';
 
 export default function Detail({
   id,
@@ -29,7 +29,7 @@ export default function Detail({
   const getStudents = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/student/getAllStudents"
+        'http://localhost:5000/api/student/getAllStudents'
       ).then((res) => res.json());
       setData(res.students);
     } catch (error) {
@@ -39,7 +39,7 @@ export default function Detail({
   const getPaiements = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/paiement/getAllPaiements"
+        'http://localhost:5000/api/paiement/getAllPaiements'
       ).then((res) => res.json());
       setPaiements(res.paiements);
 
@@ -61,19 +61,19 @@ export default function Detail({
     <>
       <div
         className={` fixed top-0 left-0 z-50 px-12 py-8 w-full h-full ${
-          paye ? "bg-blue-50" : "bg-red-50"
+          paye ? 'bg-blue-50' : 'bg-red-50'
         } flex flex-col gap-4`}
       >
         <div className=" w-full  flex items-center justify-between">
           <div className=" flex items-center gap-8">
             <IoMdArrowBack
-              size={"2rem"}
+              size={'2rem'}
               className=" text-green-400 cursor-pointer"
               onClick={handleGlobal}
             />
             <p className=" text-2xl text-green-400">{nom}</p>
             <p className=" ">
-              Date d'écheance :{" "}
+              Date d'écheance :{' '}
               <span className=" text-green-400">{dateEcheance}</span>
             </p>
             <p className=" ">
@@ -106,7 +106,7 @@ export default function Detail({
                     return (
                       <div className=" w-full   grid grid-cols-4  items-center gap-2">
                         <p className=" py-1 bg-white rounded-sm  text-center ">
-                          {item.numMatr}{" "}
+                          {item.numMatr}{' '}
                         </p>
                         <p className=" py-1 bg-white rounded-sm  text-center capitalize ">
                           {item.prenoms}
@@ -130,18 +130,18 @@ export default function Detail({
                   {nombreTotalEtudiant} <span className=" text-sm">éleves</span>
                 </p>
                 <p className=" text-2xl">
-                  Montant :{" "}
+                  Montant :{' '}
                   <span className=" text-xl">
                     <span className=" text-green-400">
-                      {" "}
+                      {' '}
                       {nombreDePaiment * montant}
                     </span>
-                  </span>{" "}
+                  </span>{' '}
                   / {nombreTotalEtudiant * montant}Ar
                 </p>
                 <p className=" text-2xl  text-green-400">
                   {(nombreDePaiment * 100) / nombreTotalEtudiant}
-                  <span className=" text-base"> %</span>
+                  <span className="text-base"> %</span>
                 </p>
               </div>
             </>
@@ -156,7 +156,7 @@ export default function Detail({
                     return (
                       <div className=" w-full   grid grid-cols-4  items-center gap-2">
                         <p className=" py-1 bg-white rounded-sm  text-center ">
-                          {item.numMatr}{" "}
+                          {item.numMatr}{' '}
                         </p>
                         <p className=" py-1 bg-white rounded-sm  text-center capitalize ">
                           {item.prenoms}
@@ -180,13 +180,13 @@ export default function Detail({
                   {nombreTotalEtudiant} <span className=" text-sm">éleves</span>
                 </p>
                 <p className=" text-2xl">
-                  Montant :{" "}
+                  Montant :{' '}
                   <span className=" text-xl">
                     <span className=" text-red-400">
-                      {" "}
+                      {' '}
                       {nombreDeNonPaiment * montant}
                     </span>
-                  </span>{" "}
+                  </span>{' '}
                   / {nombreTotalEtudiant * montant}Ar
                 </p>
                 <p className=" text-2xl  text-red-400">

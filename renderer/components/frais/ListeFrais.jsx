@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import DeleteFrais from "./DeleteFrais";
-import UpdateFrais from "./UpdateFrais";
-import Detail from "./Detail";
+import React, { useState } from 'react';
+import DeleteFrais from './DeleteFrais';
+import UpdateFrais from './UpdateFrais';
+import Detail from './Detail';
 
 export default function ListeFrais({
   id,
@@ -93,7 +93,7 @@ export default function ListeFrais({
               handleAfficheDelete();
             }}
           >
-            supprimer
+            Supprimer
           </p>
           <p
             className=" bg-green-400 text-white rounded-sm flex items-center justify-center  cursor-pointer"

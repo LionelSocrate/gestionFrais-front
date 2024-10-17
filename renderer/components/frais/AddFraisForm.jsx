@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { IoClose } from "react-icons/io5";
+import React, { useState } from 'react';
+import { IoClose } from 'react-icons/io5';
 
 export default function AddFraisForm({ afficheAddFrais }) {
-  const [nom, setNom] = useState("");
-  const [montant, setMontant] = useState("");
-  const [niveau, setNiveau] = useState("");
-  const [dateEcheance, setDateEcheance] = useState("");
+  const [nom, setNom] = useState('');
+  const [montant, setMontant] = useState('');
+  const [niveau, setNiveau] = useState('');
+  const [dateEcheance, setDateEcheance] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
       const newFrais = async () => {
-        await fetch("http://localhost:5000/api/frais/addFrais", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+        await fetch('http://localhost:5000/api/frais/addFrais', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             nomFrais: nom,
             montant: montant,
@@ -39,7 +39,7 @@ export default function AddFraisForm({ afficheAddFrais }) {
             className=" cursor-pointer absolute top-2 right-2 flex items-center justify-center  w-7 h-7 rounded-full bg-green-400"
             onClick={afficheAddFrais}
           >
-            <IoClose size={"1.2rem"} className=" text-white" />
+            <IoClose size={'1.2rem'} className=" text-white" />
           </div>
           <p className=" text-xl uppercase text-green-400  font-extrabold">
             Ajout d'un Frais
@@ -91,9 +91,9 @@ export default function AddFraisForm({ afficheAddFrais }) {
           </div>
           <button
             type="submit"
-            className=" uppercase text-white bg-green-300 rounded-sm w-full py-2"
+            className="uppercase text-white bg-green-300 rounded-sm w-full py-2 font-semibold"
           >
-            ajouter
+            Ajouter
           </button>
         </form>
       </div>

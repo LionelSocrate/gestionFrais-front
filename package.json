@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "electron-nextjs-app",
-  "description": "Boilerplate code for building Electron apps with Next.js, TypeScript, Tailwind, and Electron",
+  "name": "ENIPAYE",
+  "description": "Application d'enregistrement des paiements de frais scolaires",
   "version": "1.0.0",
-  "author": "Nick Lind <nthorlind@gmail.com>",
+  "author": "eni",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
@@ -11,12 +11,20 @@
     "package": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
     "@tailwindcss/typography": "^0.5.4",
+    "antd": "^5.21.4",
     "autoprefixer": "^10.4.8",
+    "axios": "^1.7.7",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
     "postcss": "^8.4.16",
+    "query-string": "^9.1.1",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
+    "react-redux": "^9.1.2",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^3.1.0",
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {

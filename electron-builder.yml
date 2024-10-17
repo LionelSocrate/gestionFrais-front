@@ -1,6 +1,6 @@
-appId: com.example.nextron
-productName: Electron Next.js Starter App
-copyright: Copyright © 2022 Nick Lind
+appId: enipay.app
+productName: ENIPAY
+copyright: Copyright © ENI - 2024
 directories:
   output: dist
   buildResources: resources
@@ -10,3 +10,5 @@ files:
       - package.json
       - app
 publish: null
+win:
+  icon: ressources/icon.ico

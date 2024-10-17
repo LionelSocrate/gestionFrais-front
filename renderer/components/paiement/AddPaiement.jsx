@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { IoClose } from "react-icons/io5";
+import React, { useEffect, useState } from 'react';
+import { IoClose } from 'react-icons/io5';
 
 export default function AddPaiement({ afficheAddPaiment }) {
-  const [numMatr, setNumMatr] = useState("");
-  const [frais, setFrais] = useState("");
+  const [numMatr, setNumMatr] = useState('');
+  const [frais, setFrais] = useState('');
 
   const [listeFrais, setListeFrais] = useState([]);
   const getFrais = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/frais/getAllFrais"
+        'http://localhost:5000/api/frais/getAllFrais'
       ).then((res) => res.json());
       setListeFrais(res.frais);
       setFrais(res.frais[0].nomFrais);
@@ -25,9 +25,9 @@ export default function AddPaiement({ afficheAddPaiment }) {
     e.preventDefault();
     try {
       const newPaiement = async () => {
-        await fetch("http://localhost:5000/api/paiement/addPaiement", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+        await fetch('http://localhost:5000/api/paiement/addPaiement', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             numMatr: numMatr,
             frais: frais,
@@ -52,10 +52,10 @@ export default function AddPaiement({ afficheAddPaiment }) {
             className=" cursor-pointer absolute top-2 right-2 flex items-center justify-center  w-7 h-7 rounded-full bg-green-400"
             onClick={afficheAddPaiment}
           >
-            <IoClose size={"1.2rem"} className=" text-white" />
+            <IoClose size={'1.2rem'} className=" text-white" />
           </div>
           <p className=" text-xl uppercase text-green-400  font-extrabold">
-            Payer un Frais
+            Nouveau paiement
           </p>
           <div className=" w-full h-[0.5px] bg-green-400 "></div>
           <div className=" flex flex-col gap-6">
@@ -89,7 +89,7 @@ export default function AddPaiement({ afficheAddPaiment }) {
             type="submit"
             className=" uppercase text-white bg-green-300 rounded-sm w-full py-2"
           >
-            payer
+            Enregistrer
           </button>
         </form>
       </div>
