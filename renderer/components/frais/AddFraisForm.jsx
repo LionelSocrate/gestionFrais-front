@@ -57,7 +57,7 @@ export default function AddFraisForm({ afficheAddFrais }) {
             <div className=" w-full flex flex-col gap-1">
               <label htmlFor="nom">Montant (Ar)</label>
               <input
-                type="text"
+                type="number"
                 className=" outline-none border border-green-400 w-full px-4 py-1 "
                 onChange={(e) => setMontant(e.target.value)}
               />
@@ -83,7 +83,7 @@ export default function AddFraisForm({ afficheAddFrais }) {
             <div className=" w-full flex flex-col gap-1">
               <label htmlFor="nom">Date d'écheance</label>
               <input
-                type="text"
+                type="date"
                 className=" outline-none border border-green-400 w-full px-4 py-1 "
                 onChange={(e) => setDateEcheance(e.target.value)}
               />

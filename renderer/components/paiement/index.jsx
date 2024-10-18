@@ -42,7 +42,7 @@ export default function Paiement() {
             >
               <IoAddCircleOutline size={'1.2rem'} className=" text-white" />
               <p className=" uppercase text-white  tracking-wide font-bold">
-                Nouvelle
+                Nouveau
               </p>
             </div>
           </div>

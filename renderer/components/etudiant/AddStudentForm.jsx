@@ -113,7 +113,7 @@ export default function AddStudentForm({ afficheAddStudent }) {
             <IoClose size={'1.2rem'} className=" text-white" />
           </div>
           <p className=" text-xl uppercase text-green-400  font-extrabold">
-            Ajout d'Etudiant
+            Ajouter un étudiant
           </p>
           <div className=" w-full h-[0.5px] bg-green-400 "></div>
           <div className=" flex flex-col gap-3">
@@ -128,7 +128,7 @@ export default function AddStudentForm({ afficheAddStudent }) {
               />
             </div>
             <div className=" w-full flex flex-col gap-1">
-              <label htmlFor="nom">Prenoms</label>
+              <label htmlFor="nom">Prénoms</label>
               <input
                 type="text"
                 className=" outline-none border  border-green-400  w-full px-4 py-1 "
